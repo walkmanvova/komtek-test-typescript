@@ -1,10 +1,14 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
+    <nav id="nav">
+      <router-link to="/">Список</router-link> |
+      <router-link to="/create">Создать</router-link>
+    </nav>
+    <el-row :gutter="20" type="flex" justify="center">
+      <el-col :xs="24" :sm="22" :md="20" :lg="16" :xl="12">
+        <router-view class="content" />
+      </el-col>
+    </el-row>
   </div>
 </template>
 
@@ -28,5 +32,8 @@
 
 #nav a.router-link-exact-active {
   color: #42b983;
+}
+.content {
+  padding: 20px 0 0;
 }
 </style>
